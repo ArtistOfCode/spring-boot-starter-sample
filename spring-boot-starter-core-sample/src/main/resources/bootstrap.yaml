@@ -1,0 +1,19 @@
+# Spring
+spring.output.ansi.enabled: ALWAYS
+spring.profiles.active: local
+spring.application.name: core
+spring.root.package: com.codeartist.component.core.sample
+# Spring Cloud Consul
+spring.config.import:
+spring.cloud.consul.host:
+spring.cloud.consul.token: b2d6f2f9-deb9-de4e-7852-4404d709e3e5
+spring.cloud.consul.config.enabled: false
+spring.cloud.consul.discovery.register: false
+# Spring Datasource
+spring.datasource.url: ${spring.datasource.h2.url}
+spring.datasource.hikari.minimum-idle: 1
+spring.datasource.hikari.maximum-pool-size: 2
+spring.datasource.hikari.max-lifetime: 1200000
+spring.datasource.hikari.connection-test-query: SELECT 1
+# SpringDoc
+springdoc.cache.disabled: true
