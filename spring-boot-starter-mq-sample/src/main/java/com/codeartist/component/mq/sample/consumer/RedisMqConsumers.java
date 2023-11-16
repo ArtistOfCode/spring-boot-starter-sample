@@ -1,9 +1,9 @@
 package com.codeartist.component.mq.sample.consumer;
 
+import com.codeartist.component.core.support.mq.MqContext;
+import com.codeartist.component.core.support.mq.MqMessage;
+import com.codeartist.component.core.support.mq.MqType;
 import com.codeartist.component.core.support.mq.annotatioin.RedisMqConsumer;
-import com.codeartist.component.core.support.mq.bean.MqContext;
-import com.codeartist.component.core.support.mq.bean.MqMessage;
-import com.codeartist.component.core.support.mq.bean.MqType;
 import com.codeartist.component.core.util.JSON;
 import com.codeartist.component.mq.sample.entity.Example;
 import com.codeartist.component.mq.sample.entity.Topics;
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 /**
  * RedisMQ消费者
  *
- * @author 艾江南
+ * @author AiJiangnan
  * @date 2022/11/25
  */
 @Slf4j

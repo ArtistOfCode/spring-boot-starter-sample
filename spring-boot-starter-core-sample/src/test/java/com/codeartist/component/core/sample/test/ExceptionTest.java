@@ -2,7 +2,7 @@ package com.codeartist.component.core.sample.test;
 
 import com.codeartist.component.core.entity.enums.ApiErrorCode;
 import com.codeartist.component.core.entity.enums.ApiHttpStatus;
-import com.codeartist.component.core.support.test.AbstractSpringRunnerTests;
+import com.codeartist.component.core.support.test.AbstractSpringWebRunnerTests;
 import org.junit.jupiter.api.Test;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -12,10 +12,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 /**
  * 接口异常测试
  *
- * @author J.N.AI
+ * @author AiJiangnan
  * @date 2023/6/25
  */
-public class ExceptionTest extends AbstractSpringRunnerTests {
+public class ExceptionTest extends AbstractSpringWebRunnerTests {
 
     @Test
     void client() throws Exception {

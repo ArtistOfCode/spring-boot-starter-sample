@@ -6,7 +6,7 @@ import com.codeartist.component.core.sample.entity.param.UserParam;
 import com.codeartist.component.core.sample.entity.vo.UserVO;
 import com.codeartist.component.core.support.curd.AbstractController;
 import com.codeartist.component.core.support.curd.RelationService;
-import io.swagger.annotations.ApiOperation;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -31,13 +31,13 @@ public class UserController extends AbstractController<UserVO, UserParam> {
     private RelationService relationService;
 
     @GetMapping("/role")
-    @ApiOperation("查询关联信息")
+    @Operation(summary = "查询关联信息")
     public Relation relation(@NotNull Long id) {
         return relationService.getRelation(RelationEnum.USER_ROLE.getRel(), id);
     }
 
     @PostMapping("/role")
-    @ApiOperation("保存关联接口")
+    @Operation(summary = "保存关联接口")
     public void relation(@Valid @RequestBody Relation param) {
         relationService.saveRelation(RelationEnum.USER_ROLE.getRel(), param);
     }

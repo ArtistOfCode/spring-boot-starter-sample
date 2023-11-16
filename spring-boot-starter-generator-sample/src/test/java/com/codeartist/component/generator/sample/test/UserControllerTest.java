@@ -1,6 +1,6 @@
 package com.codeartist.component.generator.sample.test;
 
-import com.codeartist.component.core.support.test.AbstractSpringRunnerTests;
+import com.codeartist.component.core.support.test.AbstractSpringWebRunnerTests;
 import com.codeartist.component.core.util.JSON;
 import com.codeartist.component.generator.sample.entity.param.UserParam;
 import org.junit.jupiter.api.Test;
@@ -12,15 +12,15 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 
 /**
- * @author 艾江南
+ * @author AiJiangnan
  * @date 2022/11/24
  */
-class UserControllerTest extends AbstractSpringRunnerTests {
+class UserControllerTest extends AbstractSpringWebRunnerTests {
 
     @Test
     void save() throws Exception {
         UserParam param = new UserParam();
-        param.setName("艾江南");
+        param.setName("AiJiangnan");
         param.setUsername("AiJiangnan");
         param.setPassword("123456");
 

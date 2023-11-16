@@ -6,10 +6,10 @@
     <parent>
         <groupId>com.codeartist</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
-        <relativePath/>
+        <version>1.0.1-SNAPSHOT</version>
     </parent>
     <artifactId>spring-boot-starter-sample</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>spring-boot-starter-sample</name>

@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * 消息队列组件测试
  *
- * @author J.N.AI
+ * @author AiJiangnan
  * @date 2023/6/15
  */
 @SpringBootApplication

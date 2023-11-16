@@ -1,7 +1,7 @@
 package com.codeartist.component.mq.sample.entity;
 
 /**
- * @author J.N.AI
+ * @author AiJiangnan
  * @date 2023/7/19
  */
 public interface Topics {

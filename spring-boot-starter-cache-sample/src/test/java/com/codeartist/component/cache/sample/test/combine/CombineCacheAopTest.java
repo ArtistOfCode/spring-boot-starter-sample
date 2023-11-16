@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 /**
  * 缓存组件测试
  *
- * @author 艾江南
+ * @author AiJiangnan
  * @date 2021/7/23
  */
 @TestMethodOrder(MethodOrderer.Alphanumeric.class)
@@ -26,7 +26,7 @@ public class CombineCacheAopTest extends AbstractSpringRunnerTests {
     @RepeatedTest(5)
     public void combineAopCache() {
         Example example = new Example();
-        example.setName("J.N.AI");
+        example.setName("AiJiangnan");
         example.setAge(27L);
         example.setPercent(new BigDecimal("100.8"));
 

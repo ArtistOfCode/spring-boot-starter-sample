@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 /**
  * 代码生成单元测试
  *
- * @author J.N.AI
+ * @author AiJiangnan
  * @date 2023/6/12
  */
 public class GeneratorTest {

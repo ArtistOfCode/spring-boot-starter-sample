@@ -14,7 +14,7 @@ import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author 艾江南
+ * @author AiJiangnan
  * @date 2022/8/18
  */
 @Service
@@ -26,7 +26,7 @@ public class CombineCacheService implements CacheService {
     public synchronized Example cache(StopWatch stopWatch) {
         stopWatch.start(UUID.randomUUID().toString());
         Example example = new Example();
-        example.setName("J.N.AI");
+        example.setName("AiJiangnan");
         example.setAge(27L);
         example.setPercent(new BigDecimal("100.8"));
         stopWatch.stop();
@@ -38,7 +38,7 @@ public class CombineCacheService implements CacheService {
     public synchronized GenericExample<Example> genericCache(StopWatch stopWatch) {
         stopWatch.start(UUID.randomUUID().toString());
         Example example = new Example();
-        example.setName("J.N.AI");
+        example.setName("AiJiangnan");
         example.setAge(27L);
         example.setPercent(new BigDecimal("100.8"));
         GenericExample<Example> genericExample = new GenericExample<>();
@@ -53,10 +53,10 @@ public class CombineCacheService implements CacheService {
     public synchronized Example spelCache(Long id, StopWatch stopWatch) {
         stopWatch.start(UUID.randomUUID().toString());
         Example example2 = new Example();
-        example2.setName("J.N.AI");
+        example2.setName("AiJiangnan");
         example2.setAge(26L);
         Example example = new Example();
-        example.setName("J.N.AI");
+        example.setName("AiJiangnan");
         example.setAge(27L);
         example.setPercent(new BigDecimal("100.8"));
         example.setExample(example2);

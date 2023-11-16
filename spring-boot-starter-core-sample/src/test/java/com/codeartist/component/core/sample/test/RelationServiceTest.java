@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 /**
  * 关联关系测试
  *
- * @author J.N.AI
+ * @author AiJiangnan
  * @date 2023/6/29
  */
 public class RelationServiceTest extends AbstractSpringRunnerTests {

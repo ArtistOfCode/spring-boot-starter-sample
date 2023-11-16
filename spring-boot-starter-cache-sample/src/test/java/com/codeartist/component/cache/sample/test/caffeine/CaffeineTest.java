@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 本地缓存测试
  *
- * @author J.N.AI
+ * @author AiJiangnan
  * @date 2023/7/14
  */
 @Slf4j
@@ -56,10 +56,10 @@ public class CaffeineTest {
 
     private Demo getDemo(Long id) {
         log.info("Enter service. {}", id);
-        Demo demo = new Demo();
-        demo.setId(1L);
-        demo.setAge(26);
-        demo.setName("ajn");
-        return demo;
+        return Demo.builder()
+                .id(1L)
+                .name("AiJiangnan")
+                .age(28)
+                .build();
     }
 }

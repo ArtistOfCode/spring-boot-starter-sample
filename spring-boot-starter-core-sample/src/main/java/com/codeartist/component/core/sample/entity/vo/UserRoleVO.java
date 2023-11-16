@@ -1,7 +1,6 @@
 package com.codeartist.component.core.sample.entity.vo;
 
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,14 +12,14 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-@ApiModel(description = "用户角色关联信息")
+@Schema(description = "用户角色关联信息")
 public class UserRoleVO {
 
     private Long id;
 
-    @ApiModelProperty("真实姓名")
+    @Schema(description = "真实姓名")
     private Long userId;
 
-    @ApiModelProperty("真实姓名")
+    @Schema(description = "真实姓名")
     private Long roleId;
 }

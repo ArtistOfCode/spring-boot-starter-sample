@@ -5,7 +5,7 @@ import lombok.Data;
 import java.math.BigDecimal;
 
 /**
- * @author 艾江南
+ * @author AiJiangnan
  * @date 2021/5/9
  */
 @Data

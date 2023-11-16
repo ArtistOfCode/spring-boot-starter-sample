@@ -13,7 +13,7 @@ import java.math.BigDecimal;
 /**
  * 缓存组件测试
  *
- * @author 艾江南
+ * @author AiJiangnan
  * @date 2021/7/23
  */
 @TestMethodOrder(MethodOrderer.Alphanumeric.class)
@@ -29,7 +29,7 @@ public class RedisCacheAopTest extends AbstractSpringRunnerTests {
         final int count = 4;
 
         Example example = new Example();
-        example.setName("J.N.AI");
+        example.setName("AiJiangnan");
         example.setAge(27L);
         example.setPercent(new BigDecimal("100.8"));
 

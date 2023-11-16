@@ -2,9 +2,9 @@ package com.codeartist.component.mq.sample.controller;
 
 import brave.ScopedSpan;
 import brave.Tracer;
-import com.codeartist.component.core.support.mq.bean.MqMessage;
-import com.codeartist.component.core.support.mq.bean.MqType;
-import com.codeartist.component.core.util.SpringContext;
+import com.codeartist.component.core.SpringContext;
+import com.codeartist.component.core.support.mq.MqMessage;
+import com.codeartist.component.core.support.mq.MqType;
 import com.codeartist.component.mq.sample.entity.Example;
 import com.codeartist.component.mq.sample.entity.Topics;
 import lombok.extern.slf4j.Slf4j;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.math.BigDecimal;
 
 /**
- * @author J.N.AI
+ * @author AiJiangnan
  * @date 2023/7/31
  */
 @Slf4j
@@ -42,7 +42,7 @@ public class TraceController {
     @GetMapping("/send")
     public void send() {
         Example example = new Example();
-        example.setName("J.N.AI");
+        example.setName("AiJiangnan");
         example.setAge(28L);
         example.setPercent(BigDecimal.TEN);
         example.setCount(0);

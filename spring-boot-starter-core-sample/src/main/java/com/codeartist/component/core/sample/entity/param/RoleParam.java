@@ -1,8 +1,7 @@
 package com.codeartist.component.core.sample.entity.param;
 
 import com.codeartist.component.core.entity.PageParam;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,11 +13,11 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-@ApiModel(description = "角色信息")
+@Schema(description = "角色信息")
 public class RoleParam extends PageParam {
 
     private Long id;
 
-    @ApiModelProperty("真实姓名")
+    @Schema(description = "真实姓名")
     private String name;
 }

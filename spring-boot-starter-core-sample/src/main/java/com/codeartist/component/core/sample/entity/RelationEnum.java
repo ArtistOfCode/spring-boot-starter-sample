@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 /**
- * @author J.N.AI
+ * @author AiJiangnan
  * @date 2023-10-08
  */
 @Getter

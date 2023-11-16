@@ -1,6 +1,6 @@
 package com.codeartist.component.cache.sample.test.redis;
 
-import com.codeartist.component.cache.support.RedisCacheTemplate;
+import com.codeartist.component.cache.support.RedisCache;
 import com.codeartist.component.core.support.test.AbstractSpringRunnerTests;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -12,7 +12,7 @@ import java.util.UUID;
 /**
  * 缓存组件测试
  *
- * @author 艾江南
+ * @author AiJiangnan
  * @date 2021/7/23
  */
 public class RedisCacheTemplateTest extends AbstractSpringRunnerTests {
@@ -20,27 +20,27 @@ public class RedisCacheTemplateTest extends AbstractSpringRunnerTests {
     private final Duration expire = Duration.ofMinutes(3);
 
     @Autowired
-    private RedisCacheTemplate defaultRedisCacheTemplate;
+    private RedisCache redisCache;
 
     @Test
     public void redisStringCache() {
         String key = UUID.randomUUID().toString();
         String val = UUID.randomUUID().toString();
 
-        String result = defaultRedisCacheTemplate.get(key, String.class);
+        String result = redisCache.get(key, String.class);
         Assertions.assertNull(result);
 
-        defaultRedisCacheTemplate.set(key, val, expire);
-        result = defaultRedisCacheTemplate.get(key, String.class);
+        redisCache.set(key, val, expire);
+        result = redisCache.get(key, String.class);
         Assertions.assertEquals(val, result);
 
-        defaultRedisCacheTemplate.set(key, null, expire);
-        result = defaultRedisCacheTemplate.get(key, String.class);
+        redisCache.set(key, null, expire);
+        result = redisCache.get(key, String.class);
         Assertions.assertNull(result);
 
-        defaultRedisCacheTemplate.delete(key);
+        redisCache.delete(key);
 
-        result = defaultRedisCacheTemplate.get(key, String.class);
+        result = redisCache.get(key, String.class);
         Assertions.assertNull(result);
     }
 
@@ -50,20 +50,20 @@ public class RedisCacheTemplateTest extends AbstractSpringRunnerTests {
         String hashKey = UUID.randomUUID().toString();
         String val = UUID.randomUUID().toString();
 
-        String result = defaultRedisCacheTemplate.get(key, hashKey, String.class);
+        String result = redisCache.getHash(key, hashKey, String.class);
         Assertions.assertNull(result);
 
-        defaultRedisCacheTemplate.set(key, hashKey, expire, val);
-        result = defaultRedisCacheTemplate.get(key, hashKey, String.class);
+        redisCache.setHash(key, hashKey, val);
+        result = redisCache.getHash(key, hashKey, String.class);
         Assertions.assertEquals(val, result);
 
-        defaultRedisCacheTemplate.set(key, hashKey, expire, null);
-        result = defaultRedisCacheTemplate.get(key, hashKey, String.class);
+        redisCache.setHash(key, hashKey, null);
+        result = redisCache.getHash(key, hashKey, String.class);
         Assertions.assertNull(result);
 
-        defaultRedisCacheTemplate.delete(key, hashKey);
+        redisCache.delete(key, hashKey);
 
-        result = defaultRedisCacheTemplate.get(key, hashKey, String.class);
+        result = redisCache.getHash(key, hashKey, String.class);
         Assertions.assertNull(result);
     }
 
@@ -71,20 +71,20 @@ public class RedisCacheTemplateTest extends AbstractSpringRunnerTests {
     public void redisOther() {
         // Inc
         String key = UUID.randomUUID().toString();
-        defaultRedisCacheTemplate.inc(key);
-        defaultRedisCacheTemplate.inc(key);
-        long inc = defaultRedisCacheTemplate.inc(key);
+        redisCache.inc(key);
+        redisCache.inc(key);
+        long inc = redisCache.inc(key);
         Assertions.assertEquals(3, inc);
 
         // Has
-        boolean hasKey = defaultRedisCacheTemplate.exist(key);
+        boolean hasKey = redisCache.exist(key);
         Assertions.assertTrue(hasKey);
 
-        defaultRedisCacheTemplate.expire(key, Duration.ofSeconds(30));
+        redisCache.expire(key, Duration.ofSeconds(30));
 
-        defaultRedisCacheTemplate.delete(key);
+        redisCache.delete(key);
 
-        hasKey = defaultRedisCacheTemplate.exist(key);
+        hasKey = redisCache.exist(key);
         Assertions.assertFalse(hasKey);
     }
 }

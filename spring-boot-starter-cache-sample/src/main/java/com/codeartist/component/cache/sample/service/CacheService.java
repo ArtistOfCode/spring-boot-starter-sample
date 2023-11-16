@@ -5,7 +5,7 @@ import com.codeartist.component.cache.sample.entity.GenericExample;
 import org.springframework.util.StopWatch;
 
 /**
- * @author J.N.AI
+ * @author AiJiangnan
  * @date 2023/7/18
  */
 public interface CacheService {

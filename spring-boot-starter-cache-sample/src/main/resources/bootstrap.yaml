@@ -1,5 +1,0 @@
-# Spring
-spring.profiles.active: local
-spring.application.name: cache-sample
-# Spring Cloud Consul
-spring.cloud.consul.enabled: false

@@ -1,9 +1,9 @@
 package com.codeartist.component.core.sample.controller;
 
-import com.codeartist.component.core.support.curd.AbstractController;
 import com.codeartist.component.core.sample.entity.param.RoleParam;
 import com.codeartist.component.core.sample.entity.vo.RoleVO;
-import io.swagger.annotations.Api;
+import com.codeartist.component.core.support.curd.AbstractController;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author CodeGenerator
  * @since 2023-06-29
  */
-@Api(tags = "角色信息")
+@Tag(name = "RoleController", description = "角色信息")
 @Validated
 @RestController
 @RequestMapping("/api/role")

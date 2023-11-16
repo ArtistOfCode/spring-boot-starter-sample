@@ -1,12 +1,8 @@
 # Spring
 spring.output.ansi.enabled: ALWAYS
-# Spring Datasource
-spring.datasource.url: ${spring.datasource.h2.url}
-spring.datasource.hikari.minimum-idle: 1
-spring.datasource.hikari.maximum-pool-size: 2
-spring.datasource.hikari.max-lifetime: 1200000
-spring.datasource.hikari.connection-test-query: SELECT 1
-spring.h2.console.enabled: false
+spring.cloud.consul.enabled: false
+spring.application.name: cache-sample
+spring.root.package: com.codeartist.component.cache.sample
 # Spring Redis
 spring.redis.host: localhost
 spring.redis.timeout: 10s

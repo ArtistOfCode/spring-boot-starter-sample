@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 /**
  * 异常接口测试
  *
- * @author 艾江南
+ * @author AiJiangnan
  * @date 2022/7/22
  */
 @FeignClient(name = "sample", url = "http://localhost:8080", path = "/api/exception")

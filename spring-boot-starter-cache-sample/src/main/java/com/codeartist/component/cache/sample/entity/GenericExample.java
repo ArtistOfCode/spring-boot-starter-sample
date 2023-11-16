@@ -5,7 +5,7 @@ import lombok.Data;
 /**
  * 泛型测试
  *
- * @author 艾江南
+ * @author AiJiangnan
  * @date 2023/4/27
  */
 @Data
