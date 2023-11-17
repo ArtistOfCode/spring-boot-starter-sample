@@ -15,8 +15,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Demo {
-    private Long id;
-    private Integer age;
+public class GenericDemo<T> {
     private String name;
+    private T body;
 }

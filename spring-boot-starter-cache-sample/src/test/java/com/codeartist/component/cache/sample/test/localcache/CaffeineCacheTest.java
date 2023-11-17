@@ -6,6 +6,7 @@ import com.codeartist.component.core.support.test.AbstractSpringRunnerTests;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.StopWatch;
 
 import java.util.UUID;
 
@@ -27,22 +28,55 @@ public class CaffeineCacheTest extends AbstractSpringRunnerTests {
         // get -> set -> get -> del -> get
         String data = localCache.get(key);
         Assertions.assertNull(data);
+
+        localCache.set(key, value);
+        data = localCache.get(key);
+        Assertions.assertEquals(value, data);
+
+        localCache.delete(key);
+        data = localCache.get(key);
+        Assertions.assertNull(data);
     }
 
+    @Test
     public void getValueLoader() {
+        StopWatch stopWatch = new StopWatch();
+        String key = UUID.randomUUID().toString();
+        Demo value = Demo.builder().id(1L).name("AiJiangnan").age(28).build();
+
+        Demo data = localCache.get(key, () -> this.doBusiness(stopWatch));
+        Assertions.assertEquals(1, stopWatch.getTaskCount());
+        Assertions.assertEquals(value, data);
+
+        data = localCache.get(key, () -> this.doBusiness(stopWatch));
+        Assertions.assertEquals(1, stopWatch.getTaskCount());
+        Assertions.assertEquals(value, data);
     }
 
-    public void set() {
+    @Test
+    public void getNullLoader() {
+        StopWatch stopWatch = new StopWatch();
+        String key = UUID.randomUUID().toString();
+
+        Demo data = localCache.get(key, () -> doBusinessNull(stopWatch));
+        Assertions.assertEquals(1, stopWatch.getTaskCount());
+        Assertions.assertNull(data);
+
+        data = localCache.get(key, () -> this.doBusinessNull(stopWatch));
+        Assertions.assertEquals(1, stopWatch.getTaskCount());
+        Assertions.assertNull(data);
     }
 
-    public void delete() {
+    private Demo doBusiness(StopWatch stopWatch) {
+        stopWatch.start();
+        Demo demo = Demo.builder().id(1L).name("AiJiangnan").age(28).build();
+        stopWatch.stop();
+        return demo;
     }
 
-    private Demo doBusiness() {
-        return Demo.builder()
-                .id(1L)
-                .name("AiJiangnan")
-                .age(28)
-                .build();
+    private Demo doBusinessNull(StopWatch stopWatch) {
+        stopWatch.start();
+        stopWatch.stop();
+        return null;
     }
 }
