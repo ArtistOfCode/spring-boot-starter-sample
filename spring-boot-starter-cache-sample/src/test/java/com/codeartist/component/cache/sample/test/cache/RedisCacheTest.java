@@ -3,7 +3,7 @@ package com.codeartist.component.cache.sample.test.cache;
 import com.codeartist.component.cache.exception.CacheException;
 import com.codeartist.component.cache.sample.test.bean.Demo;
 import com.codeartist.component.cache.sample.test.bean.GenericDemo;
-import com.codeartist.component.cache.support.RedisCache;
+import com.codeartist.component.cache.core.redis.RedisCache;
 import com.codeartist.component.core.support.serializer.TypeRef;
 import com.codeartist.component.core.support.test.AbstractSpringRunnerTests;
 import org.junit.jupiter.api.Assertions;
@@ -17,6 +17,8 @@ import java.util.concurrent.TimeUnit;
 
 
 /**
+ * Redis缓存测试
+ *
  * @author J.N.AI
  * @date 2023-11-17
  */

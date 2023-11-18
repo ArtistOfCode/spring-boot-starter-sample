@@ -1,7 +1,7 @@
 package com.codeartist.component.cache.sample.test.localcache;
 
 import com.codeartist.component.cache.sample.test.bean.Demo;
-import com.codeartist.component.cache.support.LocalCache;
+import com.codeartist.component.cache.core.LocalCache;
 import com.codeartist.component.core.support.test.AbstractSpringRunnerTests;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
