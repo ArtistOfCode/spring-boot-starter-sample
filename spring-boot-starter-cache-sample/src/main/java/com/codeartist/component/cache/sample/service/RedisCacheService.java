@@ -47,7 +47,7 @@ public class RedisCacheService implements CacheService {
     }
 
     @Override
-    @Cache(key = SPEL_CACHE_KEY, spel = "#id", timeout = 3, timeUnit = TimeUnit.MINUTES)
+    @Cache(key = SPEL_CACHE_KEY, timeout = 3, timeUnit = TimeUnit.MINUTES)
     public synchronized Example spelCache(Long id, StopWatch stopWatch) {
         stopWatch.start(UUID.randomUUID().toString());
         Example example2 = new Example();
@@ -81,7 +81,7 @@ public class RedisCacheService implements CacheService {
     }
 
     @Override
-    @CacheDelete(key = SPEL_CACHE_KEY, spel = "#id")
+    @CacheDelete(key = SPEL_CACHE_KEY)
     public synchronized void deleteSpelCache(Long id) {
     }
 

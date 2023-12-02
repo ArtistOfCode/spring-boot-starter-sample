@@ -2,8 +2,8 @@ package com.codeartist.component.cache.sample.service;
 
 import com.codeartist.component.cache.sample.entity.Example;
 import com.codeartist.component.cache.sample.entity.GenericExample;
-import com.codeartist.component.core.support.cache.annotation.LocalCache;
-import com.codeartist.component.core.support.cache.annotation.LocalCacheDelete;
+import com.codeartist.component.core.support.cache.annotation.Cache;
+import com.codeartist.component.core.support.cache.annotation.CacheDelete;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StopWatch;
 
@@ -18,7 +18,7 @@ import java.util.UUID;
 public class LocalCacheService implements CacheService {
 
     @Override
-    @LocalCache(key = CACHE_KEY)
+    @Cache(key = CACHE_KEY)
     public synchronized Example cache(StopWatch stopWatch) {
         stopWatch.start(UUID.randomUUID().toString());
         Example example = new Example();
@@ -30,7 +30,7 @@ public class LocalCacheService implements CacheService {
     }
 
     @Override
-    @LocalCache(key = GENERIC_CACHE_KEY)
+    @Cache(key = GENERIC_CACHE_KEY)
     public synchronized GenericExample<Example> genericCache(StopWatch stopWatch) {
         stopWatch.start(UUID.randomUUID().toString());
         Example example = new Example();
@@ -45,7 +45,7 @@ public class LocalCacheService implements CacheService {
     }
 
     @Override
-    @LocalCache(key = SPEL_CACHE_KEY, spel = "#id")
+    @Cache(key = SPEL_CACHE_KEY)
     public synchronized Example spelCache(Long id, StopWatch stopWatch) {
         stopWatch.start(UUID.randomUUID().toString());
         Example example2 = new Example();
@@ -61,7 +61,7 @@ public class LocalCacheService implements CacheService {
     }
 
     @Override
-    @LocalCache(key = NULL_CACHE_KEY)
+    @Cache(key = NULL_CACHE_KEY)
     public synchronized Example nullCache(StopWatch stopWatch) {
         stopWatch.start(UUID.randomUUID().toString());
         stopWatch.stop();
@@ -69,22 +69,22 @@ public class LocalCacheService implements CacheService {
     }
 
     @Override
-    @LocalCacheDelete(key = CACHE_KEY)
+    @CacheDelete(key = CACHE_KEY)
     public synchronized void deleteCache() {
     }
 
     @Override
-    @LocalCacheDelete(key = GENERIC_CACHE_KEY)
+    @CacheDelete(key = GENERIC_CACHE_KEY)
     public synchronized void deleteGenericCache() {
     }
 
     @Override
-    @LocalCacheDelete(key = SPEL_CACHE_KEY, spel = "#id")
+    @CacheDelete(key = SPEL_CACHE_KEY)
     public synchronized void deleteSpelCache(Long id) {
     }
 
     @Override
-    @LocalCacheDelete(key = NULL_CACHE_KEY)
+    @CacheDelete(key = NULL_CACHE_KEY)
     public synchronized void deleteNullCache() {
     }
 }
