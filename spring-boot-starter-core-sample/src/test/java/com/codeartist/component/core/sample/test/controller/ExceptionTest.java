@@ -1,6 +1,6 @@
-package com.codeartist.component.core.sample.test;
+package com.codeartist.component.core.sample.test.controller;
 
-import com.codeartist.component.core.entity.enums.ApiErrorCode;
+import com.codeartist.component.core.code.ApiErrorCode;
 import com.codeartist.component.core.entity.enums.ApiHttpStatus;
 import com.codeartist.component.core.support.test.AbstractSpringWebRunnerTests;
 import org.junit.jupiter.api.Test;
@@ -36,8 +36,8 @@ public class ExceptionTest extends AbstractSpringWebRunnerTests {
     @Test
     void server() throws Exception {
         mockMvc.perform(get("/api/exception/server"))
-                .andExpect(status().isInternalServerError())
-                .andExpect(jsonPath("$.code").value(ApiErrorCode.SERVICE_ERROR.getCode()))
+                .andExpect(status().is(ApiHttpStatus.SERVER_ERROR.getValue()))
+                .andExpect(jsonPath("$.code").value(ApiErrorCode.GLOBAL_SERVICE_ERROR.getCode()))
                 .andDo(print());
     }
 }

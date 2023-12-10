@@ -1,6 +1,6 @@
-package com.codeartist.component.core.sample.test;
+package com.codeartist.component.core.sample.test.controller;
 
-import com.codeartist.component.core.entity.enums.ApiErrorCode;
+import com.codeartist.component.core.code.ApiErrorCode;
 import com.codeartist.component.core.support.test.AbstractSpringWebRunnerTests;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
@@ -37,7 +37,7 @@ public class FeignExceptionTest extends AbstractSpringWebRunnerTests {
     void server() throws Exception {
         mockMvc.perform(get("/api/feign/server"))
                 .andExpect(status().isInternalServerError())
-                .andExpect(jsonPath("$.code").value(ApiErrorCode.SERVICE_ERROR.getCode()))
+                .andExpect(jsonPath("$.code").value(ApiErrorCode.GLOBAL_SERVICE_ERROR.getCode()))
                 .andDo(print());
     }
 }

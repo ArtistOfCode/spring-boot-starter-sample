@@ -10,5 +10,5 @@ import org.springframework.boot.SpringBootConfiguration;
  */
 @SpringBootConfiguration
 @MapperScan(Constants.ROOT_PACKAGE_KEY + ".mapper")
-public class MyBatisConfig {
+public class AppConfig {
 }
