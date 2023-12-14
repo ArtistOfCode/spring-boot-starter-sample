@@ -1,16 +1,16 @@
 package com.codeartist.component.generator.sample.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.time.LocalDateTime;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * 用户基本信息
  *
  * @author CodeGenerator
- * @since 2023-10-16
+ * @since 2023-12-14
  */
 @Getter
 @Setter

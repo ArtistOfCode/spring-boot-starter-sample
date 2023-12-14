@@ -1,17 +1,18 @@
 package com.codeartist.component.generator.sample.entity.param;
 
+import com.baomidou.mybatisplus.annotation.TableName;
+
+import java.time.LocalDateTime;
 import com.codeartist.component.core.entity.PageParam;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
-
 /**
  * 用户基本信息
  *
  * @author CodeGenerator
- * @since 2023-10-16
+ * @since 2023-12-14
  */
 @Getter
 @Setter
@@ -20,18 +21,18 @@ public class UserParam extends PageParam {
 
     private Long id;
 
-    @Schema(defaultValue = "真实姓名")
+    @Schema(description = "真实姓名")
     private String name;
 
-    @Schema(defaultValue = "用户名")
+    @Schema(description = "用户名")
     private String username;
 
-    @Schema(defaultValue = "密码")
+    @Schema(description = "密码")
     private String password;
 
-    @Schema(defaultValue = "状态：1：删除，0：有效")
+    @Schema(description = "状态：1：删除，0：有效")
     private Integer deleted;
 
-    @Schema(defaultValue = "创建时间")
+    @Schema(description = "创建时间")
     private LocalDateTime createTime;
 }
