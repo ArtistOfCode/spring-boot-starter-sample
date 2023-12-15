@@ -14,10 +14,10 @@ import org.springframework.stereotype.Component;
  * @date 2023-12-12
  */
 @Component
-public class UserChecker extends EntityChecker<UserParam, User> {
+public class UserChecker implements EntityChecker<EntityContext<UserParam, User>, UserParam, User> {
 
     @Override
-    protected void checkSave(EntityContext<UserParam, User> context) {
+    public void checkSave(EntityContext<UserParam, User> context) {
         if (StringUtils.isEmpty(context.getParam().getName())) {
             context.rejectClient("用户名不能为空");
         }

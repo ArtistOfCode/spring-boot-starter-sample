@@ -1,9 +1,9 @@
 package com.codeartist.component.core.sample.service;
 
-import com.codeartist.component.core.support.curd.AbstractService;
 import com.codeartist.component.core.sample.entity.User;
 import com.codeartist.component.core.sample.entity.param.UserParam;
 import com.codeartist.component.core.sample.entity.vo.UserVO;
+import com.codeartist.component.core.support.curd.AbstractService;
 import org.springframework.stereotype.Service;
 
 /**
@@ -14,7 +14,4 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class UserService extends AbstractService<User, UserVO, UserParam> {
-
-    public UserService() {
-    }
 }
