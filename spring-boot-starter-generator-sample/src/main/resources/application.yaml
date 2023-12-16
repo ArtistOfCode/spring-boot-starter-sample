@@ -1,8 +1,9 @@
 # Spring
 spring.output.ansi.enabled: ALWAYS
 spring.profiles.active: local
-spring.application.name: generator
+spring.application.name: generator-sample
 spring.root.package: com.codeartist.component.generator.sample
+spring.config.import: classpath:default.yaml
 # Spring Cloud Consul
 spring.cloud.consul.enabled: false
 # Spring Datasource
@@ -11,4 +12,3 @@ spring.datasource.hikari.minimum-idle: 1
 spring.datasource.hikari.maximum-pool-size: 2
 spring.datasource.hikari.max-lifetime: 1200000
 spring.datasource.hikari.connection-test-query: SELECT 1
-spring.h2.console.enabled: false
