@@ -1,9 +1,10 @@
 package com.codeartist.component.core.sample.entity.converter;
 
-import com.codeartist.component.core.support.curd.BaseConverter;
 import com.codeartist.component.core.sample.entity.User;
 import com.codeartist.component.core.sample.entity.param.UserParam;
 import com.codeartist.component.core.sample.entity.vo.UserVO;
+import com.codeartist.component.core.support.curd.BaseConverter;
+import org.mapstruct.DecoratedWith;
 import org.mapstruct.Mapper;
 
 /**
@@ -13,5 +14,6 @@ import org.mapstruct.Mapper;
  * @since 2023-06-29
  */
 @Mapper(componentModel = "spring")
+@DecoratedWith(UserMapperDecorator.class)
 public interface UserConverter extends BaseConverter<User, UserParam, UserVO> {
 }

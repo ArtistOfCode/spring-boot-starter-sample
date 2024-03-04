@@ -1,6 +1,6 @@
 package com.codeartist.component.core.sample.test.annotation;
 
-import com.codeartist.component.core.support.props.GlobalProperties;
+import com.codeartist.component.core.support.props.AppProperties;
 import com.codeartist.component.core.support.test.AbstractSpringRunnerTests;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -15,11 +15,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class AnnotationTest extends AbstractSpringRunnerTests {
 
     @Autowired
-    private GlobalProperties globalProperties;
+    private AppProperties appProperties;
 
     @Test
     void annotation() {
-        Assertions.assertEquals("core-sample", globalProperties.getAppName());
-        Assertions.assertEquals("com.codeartist.component.core.sample", globalProperties.getRootPackage());
+        Assertions.assertEquals("core-sample", appProperties.getName());
+        Assertions.assertEquals("com.codeartist.component.core.sample", appProperties.getRootPackage());
     }
 }

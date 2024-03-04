@@ -2,7 +2,7 @@
 spring.output.ansi.enabled: ALWAYS
 spring.profiles.active: local
 spring.application.name: cache-sample
-spring.root.package: com.codeartist.component.cache.sample
+spring.application.root-package: com.codeartist.component.cache.sample
 spring.config.import: classpath:default.yaml
 # Spring Redis
 spring.redis.host: localhost
