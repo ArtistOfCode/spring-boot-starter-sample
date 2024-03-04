@@ -11,7 +11,7 @@
 
     <insert id="insertBatch">
         insert into t_user_role (role_id, user_id) values
-        <foreach item="e" collection="ids" separator="," nullable="true">
+        <foreach item="e" collection="ids" separator=",">
             (#{id}, #{e})
         </foreach>
     </insert>
