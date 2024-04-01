@@ -19,7 +19,7 @@ public class UserChecker implements EntityChecker<EntityContext<UserParam, User>
     @Override
     public void checkSave(EntityContext<UserParam, User> context) {
         if (StringUtils.isEmpty(context.getParam().getName())) {
-            context.rejectClient("用户名不能为空");
+            context.getErrorResolver().rejectClient("用户名不能为空");
         }
     }
 }
