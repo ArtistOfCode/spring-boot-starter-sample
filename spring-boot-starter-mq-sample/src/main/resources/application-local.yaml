@@ -1,7 +1,7 @@
 # Spring
 spring.output.ansi.enabled: ALWAYS
 # Spring Datasource
-spring.datasource.url: ${spring.datasource.h2.url}
+spring.datasource.url: ${spring.h2.datasource.url}
 spring.datasource.hikari.minimum-idle: 1
 spring.datasource.hikari.maximum-pool-size: 2
 spring.datasource.hikari.max-lifetime: 1200000
