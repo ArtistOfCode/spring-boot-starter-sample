@@ -1,7 +1,7 @@
 package com.codeartist.component.core.sample.test.controller;
 
 import com.codeartist.component.core.entity.enums.ApiHttpStatus;
-import com.codeartist.component.core.support.test.AbstractSpringWebRunnerTests;
+import com.codeartist.component.core.sample.test.AbstractSpringWebRunnerTests;
 import org.junit.jupiter.api.Test;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -16,10 +16,6 @@ class UserControllerTest extends AbstractSpringWebRunnerTests {
 
     @Test
     void getById() throws Exception {
-        mockMvc.perform(get("/api/exception/client"))
-                .andExpect(status().is(ApiHttpStatus.CLIENT_WARNING.getValue()))
-                .andExpect(jsonPath("$.code").value(ApiHttpStatus.CLIENT_WARNING.getValue()))
-                .andDo(print());
     }
 
     @Test

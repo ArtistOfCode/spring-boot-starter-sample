@@ -3,12 +3,12 @@ package com.codeartist.component.core.sample.test.converter;
 import com.codeartist.component.core.sample.entity.User;
 import com.codeartist.component.core.sample.entity.converter.UserConverter;
 import com.codeartist.component.core.sample.entity.vo.UserVO;
-import com.codeartist.component.core.support.test.AbstractSpringRunnerTests;
+import com.codeartist.component.core.sample.test.AbstractSpringWebRunnerTests;
 import com.codeartist.component.core.util.JSON;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class ConverterTest extends AbstractSpringRunnerTests {
+public class ConverterTest extends AbstractSpringWebRunnerTests {
 
     @Autowired
     private UserConverter userConverter;

@@ -1,5 +1,7 @@
 package com.codeartist.component.core.sample;
 
+import com.codeartist.component.core.entity.enums.Constants;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -10,6 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date 2023/6/25
  */
 @SpringBootApplication
+@MapperScan(Constants.ROOT_PACKAGE_KEY + ".mapper")
 public class CoreApplication {
 
     public static void main(String[] args) {

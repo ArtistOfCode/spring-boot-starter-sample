@@ -1,6 +1,6 @@
 package com.codeartist.component.core.sample.test.code;
 
-import com.codeartist.component.core.support.test.AbstractSpringRunnerTests;
+import com.codeartist.component.core.sample.test.AbstractSpringWebRunnerTests;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
@@ -13,7 +13,7 @@ import java.util.Locale;
  * @author AiJiangnan
  * @date 2023-12-11
  */
-public class ErrorCodeTest extends AbstractSpringRunnerTests {
+public class ErrorCodeTest extends AbstractSpringWebRunnerTests {
 
     @Autowired
     private MessageSource messageSource;
