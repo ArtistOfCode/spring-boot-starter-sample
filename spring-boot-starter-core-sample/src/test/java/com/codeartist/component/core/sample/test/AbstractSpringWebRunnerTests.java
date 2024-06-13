@@ -2,7 +2,6 @@ package com.codeartist.component.core.sample.test;
 
 import com.codeartist.component.core.sample.CoreApplication;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.BDDMockito;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,10 +30,6 @@ public abstract class AbstractSpringWebRunnerTests {
 
     @Autowired
     protected MockMvc mockMvc;
-
-    protected <T> void mock(T t, T ret) {
-        BDDMockito.given(t).willReturn(ret);
-    }
 
     protected ResultHandler print() {
         return result -> logger.info(new String(result.getResponse().getContentAsByteArray(), StandardCharsets.UTF_8));
