@@ -21,7 +21,7 @@ public class ExceptionTest extends AbstractSpringWebRunnerTests {
     void client() throws Exception {
         mockMvc.perform(get("/api/exception/client"))
                 .andExpect(status().is(ApiHttpStatus.CLIENT_WARNING.getValue()))
-                .andExpect(jsonPath("$.code").value(ApiErrorCode.GLOBAL_CLIENT_ERROR.getCode()))
+                .andExpect(jsonPath("$.code").value(ApiErrorCode.GLOBAL_CLIENT_ERROR.name()))
                 .andDo(print());
     }
 
@@ -29,7 +29,7 @@ public class ExceptionTest extends AbstractSpringWebRunnerTests {
     void business() throws Exception {
         mockMvc.perform(get("/api/exception/business"))
                 .andExpect(status().is(ApiHttpStatus.BUSINESS_WARNING.getValue()))
-                .andExpect(jsonPath("$.code").value(ApiErrorCode.GLOBAL_BUSINESS_ERROR.getCode()))
+                .andExpect(jsonPath("$.code").value(ApiErrorCode.GLOBAL_BUSINESS_ERROR.name()))
                 .andDo(print());
     }
 
@@ -37,7 +37,7 @@ public class ExceptionTest extends AbstractSpringWebRunnerTests {
     void server() throws Exception {
         mockMvc.perform(get("/api/exception/server"))
                 .andExpect(status().is(ApiHttpStatus.SERVER_ERROR.getValue()))
-                .andExpect(jsonPath("$.code").value(ApiErrorCode.GLOBAL_SERVICE_ERROR.getCode()))
+                .andExpect(jsonPath("$.code").value(ApiErrorCode.GLOBAL_SERVICE_ERROR.name()))
                 .andDo(print());
     }
 
@@ -45,7 +45,7 @@ public class ExceptionTest extends AbstractSpringWebRunnerTests {
     void error() throws Exception {
         mockMvc.perform(get("/api/exception/error"))
                 .andExpect(status().is(ApiHttpStatus.BUSINESS_WARNING.getValue()))
-                .andExpect(jsonPath("$.code").value(ApiErrorCode.GLOBAL_BUSINESS_ERROR.getCode()))
+                .andExpect(jsonPath("$.code").value(ApiErrorCode.GLOBAL_BUSINESS_ERROR.name()))
                 .andDo(print());
     }
 }

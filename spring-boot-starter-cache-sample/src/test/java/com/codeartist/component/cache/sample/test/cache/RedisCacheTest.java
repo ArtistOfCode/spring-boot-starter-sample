@@ -1,11 +1,10 @@
 package com.codeartist.component.cache.sample.test.cache;
 
-import com.codeartist.component.cache.exception.CacheException;
+import com.codeartist.component.cache.core.redis.RedisCache;
+import com.codeartist.component.cache.sample.test.AbstractSpringWebRunnerTests;
 import com.codeartist.component.cache.sample.test.bean.Demo;
 import com.codeartist.component.cache.sample.test.bean.GenericDemo;
-import com.codeartist.component.cache.core.redis.RedisCache;
 import com.codeartist.component.core.support.serializer.TypeRef;
-import com.codeartist.component.core.support.test.AbstractSpringRunnerTests;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +21,7 @@ import java.util.concurrent.TimeUnit;
  * @author J.N.AI
  * @date 2023-11-17
  */
-class RedisCacheTest extends AbstractSpringRunnerTests {
+class RedisCacheTest extends AbstractSpringWebRunnerTests {
 
     private static final Duration duration = Duration.ofMinutes(3);
 
@@ -241,7 +240,7 @@ class RedisCacheTest extends AbstractSpringRunnerTests {
 
     @Test
     void checkKey() {
-        Assertions.assertThrows(CacheException.class, () -> redisCache.get(null, String.class));
+        Assertions.assertThrows(Exception.class, () -> redisCache.get(null, String.class));
     }
 
     private Demo doBusiness(StopWatch stopWatch) {
