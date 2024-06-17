@@ -1,11 +1,10 @@
 package com.codeartist.component.core.sample.controller;
 
+import com.codeartist.component.core.SpringContext;
 import com.codeartist.component.core.exception.BadRequestException;
 import com.codeartist.component.core.exception.BusinessException;
-import org.springframework.util.Assert;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.codeartist.component.core.sample.entity.param.UserParam;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * 异常接口测试
@@ -32,8 +31,8 @@ public class ExceptionController {
         throw new RuntimeException("服务器异常");
     }
 
-    @GetMapping("/error")
-    public void error() {
-        Assert.notNull(null, "不能为空");
+    @PostMapping("/error")
+    public void error(@RequestBody UserParam param) {
+        SpringContext.validate(param);
     }
 }

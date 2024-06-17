@@ -2,10 +2,14 @@ package com.codeartist.component.core.sample.test.controller;
 
 import com.codeartist.component.core.code.ApiErrorCode;
 import com.codeartist.component.core.entity.enums.ApiHttpStatus;
+import com.codeartist.component.core.sample.entity.param.UserParam;
 import com.codeartist.component.core.sample.test.AbstractSpringWebRunnerTests;
+import com.codeartist.component.core.util.JSON;
 import org.junit.jupiter.api.Test;
+import org.springframework.http.MediaType;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -15,7 +19,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @author AiJiangnan
  * @date 2023/6/25
  */
-public class ExceptionTest extends AbstractSpringWebRunnerTests {
+public class ExceptionControllerTest extends AbstractSpringWebRunnerTests {
 
     @Test
     void client() throws Exception {
@@ -43,9 +47,12 @@ public class ExceptionTest extends AbstractSpringWebRunnerTests {
 
     @Test
     void error() throws Exception {
-        mockMvc.perform(get("/api/exception/error"))
-                .andExpect(status().is(ApiHttpStatus.BUSINESS_WARNING.getValue()))
-                .andExpect(jsonPath("$.code").value(ApiErrorCode.GLOBAL_BUSINESS_ERROR.name()))
+        UserParam param = new UserParam();
+        mockMvc.perform(post("/api/exception/error")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(JSON.toJSONString(param)))
+                .andExpect(status().is(ApiHttpStatus.CLIENT_WARNING.getValue()))
+                .andExpect(jsonPath("$.code").value(ApiErrorCode.GLOBAL_CLIENT_ERROR.name()))
                 .andDo(print());
     }
 }

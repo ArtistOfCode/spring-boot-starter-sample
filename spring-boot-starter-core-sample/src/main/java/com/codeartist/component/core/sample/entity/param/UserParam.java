@@ -5,6 +5,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.validation.constraints.NotBlank;
 import java.time.LocalDateTime;
 
 /**
@@ -20,9 +21,11 @@ public class UserParam extends PageParam {
 
     private Long id;
 
+    @NotBlank
     @Schema(description = "真实姓名")
     private String name;
 
+    @NotBlank
     @Schema(description = "用户名")
     private String username;
 
